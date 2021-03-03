@@ -1,7 +1,7 @@
 <template>
     <div class="todoListContainer">
         <div class="heading">
-            <h2 id="title">To Do List</h2>
+            <h2 id="title">Lista de Tarefas</h2>
             <add-item-form
                 v-on:reloadList="getList()"
             />
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import addItemForm from './addItemForm'
 import listView from './listView'
+import addItemForm from './addItemForm'
 
 export default {
     components: {
@@ -46,16 +46,17 @@ export default {
 
 <style scoped>
 .todoListContainer {
-    width: 350px;
+    width: 500px;
     margin: auto;
 }
-
 .heading {
     background: #e6e6e6;
     padding: 10px;
 }
-
 #title {
     text-align: center;
+    font-family: 'Nunito', 'SansSerif';
+    font-weight: bold;
+    font-size: 32px;
 }
 </style>

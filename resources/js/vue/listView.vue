@@ -26,5 +26,6 @@ export default {
     background: #e6e6e6;
     padding: 5px;
     margin-top: 5px;
+    font-family: 'Nunito';
 }
 </style>

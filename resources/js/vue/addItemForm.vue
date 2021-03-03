@@ -1,6 +1,9 @@
 <template>
     <div class="addItem">
-        <input type="text" v-model="item.name"/>
+        <input
+            type="text"
+            placeholder="Qual a sua tarefa?"
+            v-model="item.name"/>
         <font-awesome-icon
             icon="plus-square"
             @click="addItem()"
@@ -22,8 +25,7 @@ export default {
             if (this.item.name == '') {
                 return;
             }
-
-            axios.post('item.store', {
+            axios.post('/item/store/', {
                 item: this.item
             })
             .then(response => {
@@ -50,13 +52,17 @@ input {
     background: #f7f7f7;
     border: 0px;
     outline: none;
-    padding: 5px;
+    padding: 7px;
     margin-right: 10px;
     width: 100%;
 }
 .plus {
-    font-size: 20px;
-
+    font-size: 30px;
+}
+.plus:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
 }
 .active {
     color: #00ce25;

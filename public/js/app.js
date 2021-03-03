@@ -11907,6 +11907,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -11923,7 +11926,7 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
-      axios.post('item.store', {
+      axios.post('/item/store/', {
         item: this.item
       }).then(function (response) {
         if (response.status == 201) {
@@ -11951,8 +11954,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _addItemForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addItemForm */ "./resources/js/vue/addItemForm.vue");
-/* harmony import */ var _listView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./listView */ "./resources/js/vue/listView.vue");
+/* harmony import */ var _listView__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./listView */ "./resources/js/vue/listView.vue");
+/* harmony import */ var _addItemForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addItemForm */ "./resources/js/vue/addItemForm.vue");
 //
 //
 //
@@ -11972,8 +11975,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    addItemForm: _addItemForm__WEBPACK_IMPORTED_MODULE_0__.default,
-    listView: _listView__WEBPACK_IMPORTED_MODULE_1__.default
+    addItemForm: _addItemForm__WEBPACK_IMPORTED_MODULE_1__.default,
+    listView: _listView__WEBPACK_IMPORTED_MODULE_0__.default
   },
   data: function data() {
     return {
@@ -12009,6 +12012,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
 //
 //
 //
@@ -12170,7 +12174,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.addItem {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\ninput {\n    background: #f7f7f7;\n    border: 0px;\n    outline: none;\n    padding: 5px;\n    margin-right: 10px;\n    width: 100%;\n}\n.plus {\n    font-size: 20px;\n}\n.active {\n    color: #00ce25;\n}\n.inactive {\n    color: #999999;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.addItem {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\ninput {\n    background: #f7f7f7;\n    border: 0px;\n    outline: none;\n    padding: 7px;\n    margin-right: 10px;\n    width: 100%;\n}\n.plus {\n    font-size: 30px;\n}\n.plus:hover {\n    transform: scale(1.3);\n}\n.active {\n    color: #00ce25;\n}\n.inactive {\n    color: #999999;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12194,7 +12198,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.todoListContainer[data-v-07378042] {\n    width: 350px;\n    margin: auto;\n}\n.heading[data-v-07378042] {\n    background: #e6e6e6;\n    padding: 10px;\n}\n#title[data-v-07378042] {\n    text-align: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.todoListContainer[data-v-07378042] {\n    width: 500px;\n    margin: auto;\n}\n.heading[data-v-07378042] {\n    background: #e6e6e6;\n    padding: 10px;\n}\n#title[data-v-07378042] {\n    text-align: center;\n    font-family: 'Nunito', 'SansSerif';\n    font-weight: bold;\n    font-size: 32px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12218,7 +12222,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.completed {\n    text-decoration: line-through;\n    color: #999999;\n}\n.itemText {\n    width: 100%;\n    margin-left: 20px;\n}\n.item {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 97%;\n}\n.trashcan {\n    background: #e6e6e6;\n    border: none;\n    color: #FF0000;\n    outline: none;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.completed {\n    text-decoration: line-through;\n    color: #999999;\n}\n.itemText {\n    width: 100%;\n    margin-left: -160px;\n}\n.item {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 98%;\n}\n.trashcan {\n    background: #e6e6e6;\n    border: none;\n    color: #FF0000;\n    outline: none;\n}\n.trashcan:hover {\n    transform: scale(1.3);\n}\n.check:hover {\n    transform: scale(1.3);\n}\n.check {\n    margin-left: -160px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12242,7 +12246,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.item {\n    background: #e6e6e6;\n    padding: 5px;\n    margin-top: 5px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.item {\n    background: #e6e6e6;\n    padding: 5px;\n    margin-top: 5px;\n    font-family: 'Nunito';\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30520,7 +30524,7 @@ var render = function() {
             expression: "item.name"
           }
         ],
-        attrs: { type: "text" },
+        attrs: { type: "text", placeholder: "Qual a sua tarefa?" },
         domProps: { value: _vm.item.name },
         on: {
           input: function($event) {
@@ -30576,7 +30580,7 @@ var render = function() {
         "div",
         { staticClass: "heading" },
         [
-          _c("h2", { attrs: { id: "title" } }, [_vm._v("To Do List")]),
+          _c("h2", { attrs: { id: "title" } }, [_vm._v("Lista de Tarefas")]),
           _vm._v(" "),
           _c("add-item-form", {
             on: {
@@ -30635,6 +30639,7 @@ var render = function() {
             expression: "item.completed"
           }
         ],
+        staticClass: "check",
         attrs: { type: "checkbox" },
         domProps: {
           checked: Array.isArray(_vm.item.completed)

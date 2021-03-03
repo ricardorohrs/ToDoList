@@ -3,6 +3,7 @@
         <div class="item">
             <input
                 type="checkbox"
+                class="check"
                 @change="updateCheck()"
                 v-model="item.completed"
             />
@@ -55,18 +56,31 @@ export default {
 }
 .itemText {
     width: 100%;
-    margin-left: 20px;
+    margin-left: -160px;
 }
 .item {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 97%;
+    width: 98%;
 }
 .trashcan {
     background: #e6e6e6;
     border: none;
     color: #FF0000;
     outline: none;
+}
+.trashcan:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+.check:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+.check {
+    margin-left: -160px;
 }
 </style>
