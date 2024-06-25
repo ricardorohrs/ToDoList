@@ -7,7 +7,7 @@
                 @change="updateCheck()"
                 v-model="item.completed"
             />
-            <span :class="[item.completed ? 'completed' : '', 'itemText']">{{ item.name }}</span>
+            <span :class="[item.completed ? 'completed' : '', 'itemText']">{{ item.content }}</span>
             <button @click="removeItem()" class="trashcan">
                 <font-awesome-icon icon="trash"/>
             </button>
@@ -74,13 +74,19 @@ export default {
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
+    cursor: pointer;
+    transition: all 0.1s;
 }
 .check:hover {
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
+    transition: all 0.1s;
 }
 .check {
     margin-left: -160px;
+}
+.check:hover {
+    cursor: pointer;
 }
 </style>

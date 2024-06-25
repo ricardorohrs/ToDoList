@@ -2,84 +2,54 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Models\Item;
-//use Illuminate\Support\Carbon;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Collection|Builder[]
      */
-    public function index()
+    public function index(): array|Collection
     {
-        return Item::orderBy('created_at', 'DESC')->get();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Item::query()->orderBy('created_at', 'DESC')->get();
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Item
      */
-    public function store(Request $request)
+    public function store(Request $request): Item
     {
         $newItem = new Item;
-        $newItem->name = $request->item["name"];
+        $newItem->content = $request->input('item.content');
         $newItem->save();
 
         return $newItem;
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param int $id
+     * @return Response|string
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id): Response|string
     {
-        $existingItem = Item::find($id);
+        $existingItem = Item::query()->find($id);
 
         if ($existingItem) {
-            $existingItem->completed = $request->item['completed'] ? true : false;
-            $existingItem->completed_at = $request->item['completed'] ? Carbon::now() : null;
+            $existingItem->completed = (bool)$request->input('item.completed');
+            $existingItem->completed_at = $request->input('item.completed') ? Carbon::now() : null;
             $existingItem->save();
             return $existingItem;
         }
@@ -91,12 +61,12 @@ class ItemController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return string
      */
-    public function destroy($id)
+    public function destroy(int $id): string
     {
-        $existingItem = Item::find($id);
+        $existingItem = Item::query()->find($id);
 
         if ($existingItem) {
             $existingItem->delete();

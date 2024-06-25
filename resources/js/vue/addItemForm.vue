@@ -3,11 +3,11 @@
         <input
             type="text"
             placeholder="Qual a sua tarefa?"
-            v-model="item.name"/>
+            v-model="item.content"/>
         <font-awesome-icon
             icon="plus-square"
             @click="addItem()"
-            :class="[item.name ? 'active' : 'inactive', 'plus']"/>
+            :class="[item.content ? 'active' : 'inactive', 'plus']"/>
     </div>
 </template>
 
@@ -16,25 +16,24 @@ export default {
     data: function () {
         return {
             item: {
-                name: ""
+                content: ''
             }
         }
     },
     methods: {
         addItem() {
-            if (this.item.name == '') {
+            if (!this.item.content) {
                 return;
             }
+
             axios.post('/item/store/', {
                 item: this.item
-            })
-            .then(response => {
+            }).then(response => {
                 if (response.status == 201) {
-                    this.item.name = "";
+                    this.item.content = "";
                     this.$emit('reloadList');
                 }
-            })
-            .catch(error => {
+            }).catch(error => {
                 console.log(error);
             })
         }
@@ -50,7 +49,7 @@ export default {
 }
 input {
     background: #f7f7f7;
-    border: 0px;
+    border: 0;
     outline: none;
     padding: 7px;
     margin-right: 10px;
@@ -63,6 +62,8 @@ input {
     -webkit-transform: scale(1.3);
     -ms-transform: scale(1.3);
     transform: scale(1.3);
+    cursor: pointer;
+    transition: all 0.1s;
 }
 .active {
     color: #00ce25;

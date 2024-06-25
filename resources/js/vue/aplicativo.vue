@@ -40,8 +40,8 @@ export default {
     created() {
         this.getList();
     }
-
 }
+
 </script>
 
 <style scoped>
@@ -55,7 +55,7 @@ export default {
 }
 #title {
     text-align: center;
-    font-family: 'Nunito', 'SansSerif';
+    font-family: 'Nunito', serif;
     font-weight: bold;
     font-size: 32px;
 }
