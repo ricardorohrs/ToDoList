@@ -20,6 +20,8 @@ Projeto para estudo de Laravel e Vue. Uma lista de tarefas funcional, permite a 
 - composer install
 - npm install
 - php artisan migrate
+- cp .env.example .env
+- php artisan key:generate
 ```
 
 ### Rodar localmente

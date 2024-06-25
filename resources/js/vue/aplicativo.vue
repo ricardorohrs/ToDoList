@@ -41,7 +41,6 @@ export default {
         this.getList();
     }
 }
-
 </script>
 
 <style scoped>
